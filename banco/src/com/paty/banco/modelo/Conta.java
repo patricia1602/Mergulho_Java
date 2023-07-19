@@ -1,3 +1,5 @@
+package com.paty.banco.modelo;
+
 import java.util.Objects;
 
 public class Conta {
@@ -10,7 +12,7 @@ public class Conta {
     Conta() {
 
     }
-        Conta(Pessoa titular, int agencia, int numero) {
+        public Conta(Pessoa titular, int agencia, int numero) {
         Objects.requireNonNull(titular);
 
         this.titular = titular;
@@ -18,14 +20,14 @@ public class Conta {
         this.numero = numero;
         
     }
-    void depositar ( double valor) {
+    public void depositar ( double valor) {
         if (valor <= 0) {
             throw  new IllegalStateException("Valor deve ser maior que 0");
         }
         saldo = saldo + valor;
     }
 
-    void sacar (double valor) {
+    public void sacar (double valor) {
         if(saldo - valor < 0) {
             throw  new IllegalStateException("Saldo insuficiente.");
         }
@@ -35,7 +37,7 @@ public class Conta {
             saldo = saldo - valor;
     }
 
-    void sacar(double valor, double taxaSaque) {
+    public void sacar(double valor, double taxaSaque) {
         sacar(valor + taxaSaque);
     }
 

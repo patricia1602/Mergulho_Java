@@ -1,3 +1,8 @@
+package com.paty.banco.app;
+
+import com.paty.banco.modelo.Conta;
+import com.paty.banco.modelo.Pessoa;
+
 public class Principal {
 
     public static void main(String[] args) {
@@ -16,7 +21,7 @@ public class Principal {
         minhaConta.depositar(15_000);
         minhaConta.sacar(1_000, 10);
 
-        suaConta.depositar(10_000);
+        suaConta.depositar(15_000);
 
         System.out.println("Titular : " + minhaConta.getTitular().getNome());
         System.out.println("Saldo : " + minhaConta.getSaldo());
