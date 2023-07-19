@@ -1,6 +1,8 @@
 package com.paty.banco.app;
 
 import com.paty.banco.modelo.Conta;
+import com.paty.banco.modelo.ContaEspecial;
+import com.paty.banco.modelo.ContaInvestimento;
 import com.paty.banco.modelo.Pessoa;
 
 public class Principal {
@@ -15,16 +17,18 @@ public class Principal {
        titular2.setNome("Leonardo");
        titular2.setDocumento("87656754312");
 
-        Conta minhaConta =  new Conta(titular1, 123-5,1234);
-        Conta suaConta = new Conta(titular2, 7890-3, 765);
+        ContaInvestimento minhaConta =  new ContaInvestimento(titular1, 123-5,1234);
+        ContaEspecial suaConta = new ContaEspecial(titular2, 7890-3, 765, 1_000);
 
-        minhaConta.depositar(15_000);
-        minhaConta.sacar(1_000, 10);
+        //minhaConta.depositar(15_000);
+        //minhaConta.sacar(1_000);
+        //minhaConta.creditarRendimentos(0.8);
 
         suaConta.depositar(15_000);
+        suaConta.sacar(15_500);
 
-        System.out.println("Titular : " + minhaConta.getTitular().getNome());
-        System.out.println("Saldo : " + minhaConta.getSaldo());
+        //System.out.println("Titular : " + minhaConta.getTitular().getNome());
+        //System.out.println("Saldo : " + minhaConta.getSaldo());
 
         System.out.println("Titular : " + suaConta.getTitular().getNome());
         System.out.println("Saldo : " + suaConta.getSaldo());

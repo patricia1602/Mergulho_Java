@@ -20,7 +20,7 @@ public class Conta {
         this.numero = numero;
         
     }
-    public void depositar ( double valor) {
+    public void depositar (double valor) {
         if (valor <= 0) {
             throw  new IllegalStateException("Valor deve ser maior que 0");
         }
@@ -28,10 +28,10 @@ public class Conta {
     }
 
     public void sacar (double valor) {
-        if(saldo - valor < 0) {
-            throw  new IllegalStateException("Saldo insuficiente.");
+        if(valor <= 0) {
+            throw  new IllegalStateException("Valor deve ser maior que 0");
         }
-        if (saldo - valor < 0) {
+        if (getSaldodisponivel() - valor < 0) {
             throw  new IllegalStateException("SaLdo insuficiente");
         }
             saldo = saldo - valor;
@@ -45,10 +45,6 @@ public class Conta {
         return titular;
     }
 
-    public void setTitular(Pessoa titular) {
-        this.titular = titular;
-    }
-
     public int getAgencia() {
         return agencia;
     }
@@ -59,5 +55,9 @@ public class Conta {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public double getSaldodisponivel() {
+        return getSaldo();
     }
 }
