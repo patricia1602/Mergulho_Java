@@ -31,4 +31,5 @@ public class CaixaEletronico {
         conta.depositar(documento.getValorTotal());
         documento.estornarPagamento();
     }
+
 }
