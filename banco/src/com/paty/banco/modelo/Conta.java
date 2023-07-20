@@ -2,7 +2,7 @@ package com.paty.banco.modelo;
 
 import java.util.Objects;
 
-public class Conta {
+public abstract class Conta {
 
     private Pessoa titular;
     private int agencia;
@@ -40,6 +40,8 @@ public class Conta {
     public void sacar(double valor, double taxaSaque) {
         sacar(valor + taxaSaque);
     }
+
+    public abstract void debitarTarifaMensal();
 
     public Pessoa getTitular() {
         return titular;
