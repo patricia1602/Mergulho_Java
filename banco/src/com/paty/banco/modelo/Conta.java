@@ -1,5 +1,7 @@
 package com.paty.banco.modelo;
 
+import com.paty.banco.modelo.excecao.SaldoInsuficienteException;
+
 import java.util.Objects;
 
 public abstract class Conta {
@@ -32,7 +34,7 @@ public abstract class Conta {
             throw  new IllegalStateException("Valor deve ser maior que 0");
         }
         if (getSaldodisponivel() - valor < 0) {
-            throw  new IllegalStateException("SaLdo insuficiente");
+            throw  new SaldoInsuficienteException("SaLdo insuficiente");
         }
             saldo = saldo - valor;
     }
