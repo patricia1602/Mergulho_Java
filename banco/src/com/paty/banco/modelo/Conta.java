@@ -67,6 +67,8 @@ public abstract class Conta {
     }
 
     public BigDecimal getSaldodisponivel() {
+
         return getSaldo();
     }
+
 }

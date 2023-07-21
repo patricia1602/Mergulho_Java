@@ -24,11 +24,13 @@ public class Boleto implements DocumentoPagavel, DocumentoEstornavel {
 
     @Override
     public boolean estaPago() {
+
         return pago;
     }
 
     @Override
     public void estornarPagamento() {
+
         pago = false;
     }
 
