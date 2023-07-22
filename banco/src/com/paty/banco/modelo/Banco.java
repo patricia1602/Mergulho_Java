@@ -3,6 +3,7 @@ package com.paty.banco.modelo;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Banco {
 
@@ -37,4 +38,22 @@ public class Banco {
 
     }
 
+    public Optional<Conta> buscar(int agencia, int numeroConta) {
+        for(Conta conta :getContas()) {
+            if (conta.getAgencia() == agencia
+            && conta.getNumero() == numeroConta) {
+                return Optional.of(conta);
+            }
+        }
+        return Optional.empty();
+    }
+
+ //   public Conta buscar (int agencia, int numeroConta) {
+ //       for (Conta conta : getContas()) {
+ //           if (conta.getAgencia() == agencia && conta.getNumero() == numeroConta) {
+ //               return conta;
+ //           }
+ //       }
+ //       return null;
+ //   }
 }
